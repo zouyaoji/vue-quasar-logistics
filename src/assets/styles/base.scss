@@ -1,0 +1,130 @@
+html,
+body,
+{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  // overflow-x: hidden;
+  // overflow-y: hidden;
+  font-family: 'Arial', 'Microsoft YaHei';
+  font-size: 10pt;
+  -webkit-overflow-scrolling: touch;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #3F51B5;
+  transform: scaleX(0);
+  transition: .3s ease-in-out;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transition: .3s ease-in-out;
+}
+
+.hover {
+  transform: scaleX(1);
+  transition: .3s ease-in-out;
+}
+
+img {
+  border: none;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rotate {
+  animation: imgRotate 9s linear infinite;
+}
+
+@keyframes imgRotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fade-enter-active,
+.fade-enter {
+  -webkit-animation: moveFromRight .5s both ease;
+  animation: moveFromRight .5s both ease;
+}
+
+.fade-leave-to,
+.fade-leave-active {
+  -webkit-animation: moveToLeft 1s both ease;
+  animation: moveToLeft 1s both ease;
+}
+
+.fade-enter-active {
+  transition: all .3s ease;
+}
+
+.fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.fade-enter,
+.fade-leave-active {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+  
+  .menu-toggle,
+  .menu-link,
+  .logo-collapsed,
+  .layout-aside-left {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+@media (max-width: 767px) {
+  .mainmenu {
+    display: none;
+  }
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}

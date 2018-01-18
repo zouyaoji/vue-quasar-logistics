@@ -1,0 +1,88 @@
+<template>
+    <baidu-map class="bm-view container" :center="center" :zoom="zoom" @ready="handler" @moveend="syncCenterAndZoom" @zoomend="syncCenterAndZoom">
+      <bm-marker :position="{lng: 104.063207, lat: 30.760804}" :dragging="false" animation="BMAP_ANIMATION_BOUNCE" @click="infoWindowOpen">
+        <bm-info-window :position="center" title="成都送福物流有限公司" :show="infoWindow.show" @close="infoWindowClose" @open="infoWindowOpen">
+          <p v-html="infoWindow.contents"></p>
+        </bm-info-window>
+      </bm-marker>
+      <bm-scale anchor="BMAP_ANCHOR_BOTTOM_LEFT" :offset="{ width: 80, height: 22 }"/>
+      <bm-control anchor="BMAP_ANCHOR_BOTTOM_LEFT" :offset="{ width: 10, height: 60 }">
+        <q-btn @click="locate" class="back-map">
+          <q-icon name="ion-android-locate" />
+        </q-btn>
+        <q-btn @click="addZoom(1)">
+          <q-icon name="ion-android-add-circle" />
+        </q-btn>
+        <q-btn @click="addZoom(-1)">
+          <q-icon name="ion-android-remove-circle" />
+        </q-btn>
+      </bm-control>
+    </baidu-map>
+</template>
+
+<script>
+  export default {
+    name: 'baidumap',
+    data () {
+      return {
+        map: null,
+        center: {
+          lng: 0,
+          lat: 0
+        },
+        zoom: 1,
+        infoWindow: {
+          show: true,
+          contents: '地址：成都市新都区南丰大道40号（皇花泰来仓库内）<br/>联系电话：13550052259'
+        }
+      }
+    },
+    methods: {
+      handler ({
+        BMap,
+        map
+      }) {
+        this.center.lng = 104.063207
+        this.center.lat = 30.760804
+        this.zoom = 18
+      },
+      infoWindowClose () {
+        this.infoWindow.show = false
+      },
+      infoWindowOpen () {
+        this.infoWindow.show = true
+      },
+      locate () {
+        this.center.lng = 104.063207
+        this.center.lat = 30.760804
+        this.zoom = 18
+      },
+      addZoom (level) {
+        this.zoom = this.zoom + level
+      },
+      syncCenterAndZoom (e) {
+        const {
+          lng,
+          lat
+        } = e.target.getCenter()
+        this.center.lng = lng
+        this.center.lat = lat
+        this.zoom = e.target.getZoom()
+      }
+    }
+  }
+</script>
+
+<style>
+  .bm-view {
+    /* width: 100%; */
+    height: 400px;
+  }
+
+  .bm-view .q-btn {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+
+</style>
