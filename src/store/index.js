@@ -10,6 +10,7 @@ import state from './state'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  strict: true,
   state,
   getters,
   actions,

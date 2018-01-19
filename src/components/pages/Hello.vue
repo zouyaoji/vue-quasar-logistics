@@ -2,7 +2,7 @@
   <div class="no">
     <q-card>
   <q-card-title>
-    Card Title
+    {{count}}
   </q-card-title>
   <q-card-separator />
   <q-card-main>
@@ -14,7 +14,11 @@
 
 <script>
 export default {
-
+  computed: {
+    count () {
+      return this.$store.state.mobileMode
+    }
+  }
 }
 </script>
 

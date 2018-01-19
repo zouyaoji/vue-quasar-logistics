@@ -1,10 +1,11 @@
 import { cookieStorage } from 'common/storage'
 
 let state = {
-  user_info: cookieStorage.get('user_info'),
+  userInfo: cookieStorage.get('user_info'),
   isLoginPage: false,
-  mobileMode: false,
-  menuCollapse: true,
+  isMobileMode: false,
+  isMenuCollapse: true,
+  isLoadingRoute: false,
   posts: []
 }
 

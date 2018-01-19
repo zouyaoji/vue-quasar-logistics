@@ -14,14 +14,17 @@ let mutations = {
   setIsLoginPage (state, value) {
     state.isLoginPage = value
   },
-  setMobileMode (state, value) {
-    state.mobileMode = value
+  setIsMobileMode (state, value) {
+    state.isMobileMode = value
   },
-  setMenuCollapse (state, value) {
-    state.menuCollapse = value
+  setIsMenuCollapse (state, value) {
+    state.isMenuCollapse = value
   },
   setPosts (state, posts) {
     state.posts = posts
+  },
+  setIsLoadingRoute (state, value) {
+    state.isLoadingRoute = value
   }
 }
 

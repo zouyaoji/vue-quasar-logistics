@@ -1,6 +1,6 @@
-# Quasar App
+# vue-quasar-logistics
 
-> A Quasar project
+> Vue2.0 + Quasar 前端App
 
 ## Build Setup
 
@@ -8,7 +8,7 @@
 # install dependencies
 $ npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:80
 $ quasar dev
 
 # build for production with minification

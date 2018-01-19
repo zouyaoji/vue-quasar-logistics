@@ -11,8 +11,10 @@
     name: 'home',
     components: {
       carousel
+    },
+    created () {
+  
     }
-
   }
 </script>
 

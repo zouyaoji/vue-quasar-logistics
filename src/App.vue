@@ -3,7 +3,7 @@
   <div id="q-app" class="songluck">
     <q-transition enter="fadeIn" leave="fadeOut" mode="out-in" :duration="300" @leave="resetScroll">
       <router-view />
-    </q-transition>
+    </q-transition>    
   </div>
 </template>
 
@@ -11,7 +11,6 @@
 /*
  * Root component
  */
-
 export default {
   name: 'q-app',
   methods: {

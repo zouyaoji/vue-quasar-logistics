@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { Events } from 'quasar'
+import store from 'store'
 
 Vue.use(VueRouter)
 
@@ -82,14 +82,13 @@ const router = new VueRouter({
 // 全局路由配置
 // 路由开始之前的操作
 router.beforeEach((to, from, next) => {
-  // NProgress.done().start()
-  Events.$emit('loadingRoute', true)
+  store.commit('setIsLoadingRoute', true)
   next()
 })
 
 // 路由完成之后的操作
 router.afterEach((to, from) => {
-  Events.$emit('loadingRoute', false)
+  store.commit('setIsLoadingRoute', false)
 })
 
 export default router

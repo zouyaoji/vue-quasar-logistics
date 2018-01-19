@@ -1,19 +1,31 @@
 {
-  "name": "quasar-app",
+  "name": "vue-quasar-logistics",
   "productName": "Quasar App",
   "version": "0.0.1",
   "private": true,
   "description": "A Quasar App",
-  "author": "Your Name <your@email.com>",
+  "author": "zouyaoji <370681295@qq.com>",
   "scripts": {
     "clean": "node build/script.clean.js",
     "dev": "node build/script.dev.js",
     "build": "node build/script.build.js",
     "lint": "eslint --ext .js,.vue src"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zouyaoji/vue-quasar-logistics"
+  },
+  "keywords": [
+    "vue",
+    "quasar-framework",
+    "webpack",
+    "vue-baidu-map",
+    "logistics"
+  ],
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
+    "nprogress": "^0.2.0",
     "quasar-extras": "1.x",
     "quasar-framework": "^0.14.7",
     "vue": "^2.5.13",
