@@ -3,13 +3,18 @@
     <q-toolbar-title>
       Layout Footer
     </q-toolbar-title>
-    <p>Copyright © 2018 All Rights Reserved </p>
+    <div class="gt-sm">Copyright &copy; {{getYear}} zouyaoji All Rights Reserved</div>
   </q-toolbar>
 </template>
 
 <script>
 export default {
-  name: 'vFooter'
+  name: 'vFooter',
+  computed: {
+    getYear () {
+      return new Date().getFullYear()
+    }
+  }
 }
 </script>
 

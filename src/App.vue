@@ -1,9 +1,9 @@
 <template>
   <!-- Don't drop "q-app" class -->
-  <div id="q-app" class="songluck">
+  <div id="q-app" class="wrapper">
     <q-transition enter="fadeIn" leave="fadeOut" mode="out-in" :duration="300" @leave="resetScroll">
       <router-view />
-    </q-transition>    
+    </q-transition>
   </div>
 </template>
 
@@ -19,12 +19,17 @@ export default {
       document.body.scrollTop = 0
       done()
     }
+  },
+  created () {
+    console.log('App created')
+  },
+  mounted () {
+    console.log('App mounted')
   }
 }
 </script>
 
 <style>
-
 .el-menu-demo {
   border-bottom-width: 0px;
 }
@@ -46,7 +51,5 @@ export default {
     /* font-weight: bold; */
     background-color: rgb(94, 63, 131) !important;
 } 
-
-
 
 </style>

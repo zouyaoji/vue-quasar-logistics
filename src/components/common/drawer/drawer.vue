@@ -1,5 +1,11 @@
 <template>
-  <div class="leftDrawer">
+  <q-scroll-area style="width: 100%; height: 100%;" :delay="1500" :thumb-style="{
+    right: '2px',
+    borderRadius: '5px',
+    background: scrollAreaBackground,
+    width: '5px',
+    opacity: 0.8
+  }">
     <q-list no-border link inset-separator highlight>
       <q-list-header>Essential Links</q-list-header>
       <template v-for="(item, index) in $router.options.routes[1].children" v-if="item.show">
@@ -17,11 +23,17 @@
         </q-collapsible>
       </template>
     </q-list>
-  </div>
+  </q-scroll-area>
+  
 </template>
 
 <script>
   export default {
-    name: 'drawer'
+    name: 'drawer',
+    data () {
+      return {
+        scrollAreaBackground: '#4e8ca8'
+      }
+    }
   }
 </script>

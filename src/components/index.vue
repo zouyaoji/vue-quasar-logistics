@@ -1,16 +1,21 @@
 <template>
-  <div class="wrapper">
-    <q-layout ref="layout" view="lHh Lpr fff" :left-class="{'bg-grey-2': true}" :style="{ backgroundColor: backgroundColor}">
-      <vHeader slot="header"></vHeader>
-      <drawer slot="left"></drawer>
-      <q-transition enter="fadeIn" leave="fadeOut" mode="out-in" :duration="300">
-        <router-view />
-      </q-transition>
-      <q-ajax-bar ref="bar" color="red" size="5px" :delay="0" />
-      <h1>{{isLoadingRoute}}</h1>
-      <vFooter slot="footer"></vFooter>
-    </q-layout>
-  </div>
+  <q-layout ref="layout" view="lHh Lpr fff" :left-class="{'bg-grey-2': true}" :style="{ backgroundColor: backgroundColor}">
+    <v-header slot="header"></v-header>
+    <drawer slot="left"></drawer>
+    <q-transition enter="fadeIn" leave="fadeOut" mode="out-in" :duration="300">
+      <router-view />
+    </q-transition>
+    <q-ajax-bar ref="bar" color="red" size="5px" :delay="0" />
+    <v-footer slot="footer"></v-footer>
+    <q-fixed-position corner="bottom-right" :offset="[18, 18]">
+      <q-btn
+        v-back-to-top
+        round
+        color="primary"
+        icon="keyboard_arrow_up"
+      />
+    </q-fixed-position>
+  </q-layout>
 </template>
 
 <script>
@@ -36,6 +41,12 @@
         isLoadingRoute: 'getIsLoadingRoute'
       })
     },
+    created () {
+      console.log('index created')
+    },
+    mounted () {
+      console.log('index mounted')
+    },
     watch: {
       isLoadingRoute (state) {
         if (state) {
@@ -47,11 +58,15 @@
       }
     },
     methods: {
+      scrollHandler (scroll) {
+        console.log(scroll)
+      }
     }
   }
 </script>
 
 <style>
-
-
+.aa {
+  background-color: #4e8ca8
+}
 </style>

@@ -1,8 +1,8 @@
 <template>
-  <!-- <div class="toolbar">  -->
+  <div class="header"> 
     <q-toolbar class="no-wrap items-center relative-position q-toolbar-normal">
         <div class="menu-toggle">
-          <q-btn flat @click="$parent.toggleLeft()">
+          <q-btn flat @click="menuClick">
             <q-icon name="menu" />
           </q-btn>
         </div>
@@ -11,6 +11,7 @@
           Vue Test
         </q-toolbar-title>
         <div class="container mainmenu">
+          
           <div class="logo"><a><img src="~assets/images/logo2.png"></a></div>
           <el-menu :default-active="$route.path" class="el-menu-demo" mode="horizontal" background-color="#005cac" text-color="#f5f5f5" active-text-color="#ffe100" router>
             <template v-for="(item, index) in $router.options.routes[1].children" v-if="item.show">
@@ -25,14 +26,28 @@
           </el-menu>
         </div>
       </q-toolbar>
-  <!-- </div> -->
+  </div>
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
 export default {
   name: 'vHeader',
+  computed: {
+    ...mapGetters({
+      isMenuCollapse: 'getIsMenuCollapse'
+    })
+  },
   created () {
-
+  },
+  methods: {
+    ...mapMutations({
+      setIsMenuCollapse: 'setIsMenuCollapse'
+    }),
+    menuClick () {
+      this.$parent.toggleLeft()
+      this.setIsMenuCollapse(true)
+    }
   }
 }
 </script>

@@ -3,8 +3,8 @@ const getters = {
   // 获取用户信息
   getUserInfo: state => state.user_Info,
   getIsLoginPage: state => state.isLoginPage,
-  getMobileMode: state => state.isMobileMode,
-  getMenuCollapse: state => state.isMenuCollapse,
+  getIsMobileMode: state => state.isMobileMode,
+  getIsMenuCollapse: state => state.isMenuCollapse,
   getIsLoadingRoute: state => state.isLoadingRoute,
   getPosts: state => state.posts
 }
