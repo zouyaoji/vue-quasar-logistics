@@ -51,7 +51,7 @@ let routes = [
       },
       {
         path: '/hr',
-        name: '招贤纳士',
+        name: '招贤纳士1',
         component: load('pages/hr/hr'),
         faIcon: 'fa-home',
         show: true,
