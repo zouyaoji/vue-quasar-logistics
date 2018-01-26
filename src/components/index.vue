@@ -41,12 +41,6 @@
         isLoadingRoute: 'getIsLoadingRoute'
       })
     },
-    created () {
-      console.log('index created')
-    },
-    mounted () {
-      console.log('index mounted')
-    },
     watch: {
       isLoadingRoute (state) {
         if (state) {

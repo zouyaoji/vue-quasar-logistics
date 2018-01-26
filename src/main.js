@@ -16,6 +16,7 @@ import Quasar, * as All from 'quasar'
 import BaiduMap from 'vue-baidu-map'
 import router from './router'
 import store from 'store'
+
 // import 'babel-polyfill'
 
 Vue.config.productionTip = false
@@ -28,6 +29,12 @@ Vue.use(Quasar, {
 
 Vue.use(BaiduMap, {
   ak: 'yIgGelNEPkCYX94v4hq8wP1364Btjta4'
+})
+
+import AlloyFinger from 'alloyfinger'
+import AlloyFingerPlugin from 'alloyfinger/vue/alloy_finger.vue'
+Vue.use(AlloyFingerPlugin, {
+  AlloyFinger
 })
 
 if (__THEME === 'mat') {

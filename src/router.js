@@ -28,7 +28,7 @@ let routes = [
       {
         path: '/service',
         name: '服务项目',
-        component: load('pages/Hello'),
+        component: load('pages/service/service'),
         faIcon: 'fa-home',
         show: true,
         subLabel: ''
@@ -42,17 +42,20 @@ let routes = [
         subLabel: ''
       },
       {
-        path: '/',
-        name: '我的工作台',
-        component: load('pages/Hello'),
-        faIcon: 'fa-money',
+        path: '/contact',
+        name: '联系我们',
+        component: load('pages/contact/contact'),
+        faIcon: 'call',
         show: true,
-        sublabel: 'myDemo',
-        children: [
-          { path: '/2-1', component: load('pages/Hello'), faIcon: 'record_voice_over', name: '选项1', show: true, sublabel: 'myDemo' },
-          { path: '/2-2', component: load('pages/Hello'), faIcon: 'record_voice_over', name: '选项2', show: true, sublabel: 'myDemo' },
-          { path: '/2-3', component: load('pages/Hello'), faIcon: 'record_voice_over', name: '选项3', show: true, sublabel: 'myDemo' }
-        ]
+        sublabel: 'myDemo'
+      },
+      {
+        path: '/hr',
+        name: '招贤纳士',
+        component: load('pages/hr/hr'),
+        faIcon: 'fa-home',
+        show: true,
+        subLabel: ''
       }
     ]
   },

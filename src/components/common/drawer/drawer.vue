@@ -7,7 +7,7 @@
     opacity: 0.8
   }">
     <q-list no-border link inset-separator highlight>
-      <q-list-header>Essential Links</q-list-header>
+      <q-list-header>导航菜单</q-list-header>
       <template v-for="(item, index) in $router.options.routes[1].children" v-if="item.show">
         <q-side-link :key="index" item :to="item.path" v-if="item.children == null">
           <q-item-side :icon="item.faIcon" />

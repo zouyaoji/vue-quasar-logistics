@@ -19,12 +19,6 @@ export default {
       document.body.scrollTop = 0
       done()
     }
-  },
-  created () {
-    console.log('App created')
-  },
-  mounted () {
-    console.log('App mounted')
   }
 }
 </script>

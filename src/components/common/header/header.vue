@@ -12,7 +12,7 @@
         </q-toolbar-title>
         <div class="container mainmenu">
           
-          <div class="logo"><a><img src="~assets/images/logo2.png"></a></div>
+          <div class="logo"><a><img src="~assets/imgs/logo2.png"></a></div>
           <el-menu :default-active="$route.path" class="el-menu-demo" mode="horizontal" background-color="#005cac" text-color="#f5f5f5" active-text-color="#ffe100" router>
             <template v-for="(item, index) in $router.options.routes[1].children" v-if="item.show">
               <el-menu-item :key="index" :index="item.path" v-if="item.children == null">{{item.name}}</el-menu-item>
