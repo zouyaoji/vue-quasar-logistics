@@ -21,7 +21,7 @@ let routes = [
         path: '/home',
         name: '网站首页',
         component: load('pages/home/home'),
-        faIcon: 'fa-home',
+        faIcon: 'home',
         show: true,
         subLabel: ''
       },
@@ -29,7 +29,7 @@ let routes = [
         path: '/service',
         name: '服务项目',
         component: load('pages/service/service'),
-        faIcon: 'fa-home',
+        faIcon: 'share',
         show: true,
         subLabel: ''
       },
@@ -37,7 +37,7 @@ let routes = [
         path: '/about',
         name: '关于我们',
         component: load('pages/about/about'),
-        faIcon: 'fa-home',
+        faIcon: 'event note',
         show: true,
         subLabel: ''
       },
@@ -45,15 +45,15 @@ let routes = [
         path: '/contact',
         name: '联系我们',
         component: load('pages/contact/contact'),
-        faIcon: 'call',
+        faIcon: 'contact phone',
         show: true,
-        sublabel: 'myDemo'
+        sublabel: ''
       },
       {
         path: '/hr',
-        name: '招贤纳士1',
+        name: '招贤纳士',
         component: load('pages/hr/hr'),
-        faIcon: 'fa-home',
+        faIcon: 'person add',
         show: true,
         subLabel: ''
       }
